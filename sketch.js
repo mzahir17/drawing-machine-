@@ -11,18 +11,27 @@ function setup() {
 }
 
 function draw() {
-
+  colorMode(HSB);
   if (mouseIsPressed) {
     backgroundColor -= 5;
     background(backgroundColor);
     // line(mouseX, mouseY, pmouseX, pmouseY);
     array.push([mouseX, mouseY]);
 
+
     beginShape();
     for (let i = 0; i < array.length; i++) {
       //line(array[i] [0], array[i] [1], array[i + 1][0], array[i + 1] [1]);
       curveVertex(array[i][0], array[i][1])
+
+      noStroke();
+      stroke((5 * frameCount) % 360, 40, 100);
+      fill((5 * frameCount) % 360, 100, 100);
+
+      strokeWeight(20);
+      line(mouseX, mouseY, pmouseX, pmouseY);
     }
+    colorMode(RGB);
     endShape();
 
   }
@@ -52,20 +61,20 @@ function keyTyped() {
 
 }
 
-function mousePressed(){
+function mousePressed() {
   array = [];
   backgroundColor = 255;
 }
 
-function drawGrid(){
+function drawGrid() {
   numCells = 20;
   fillColor = 255;
   //noStroke();
   strokeWeight(0);
 
-  for (let i = 0; i <= width; i += width / numCells){
-    for (let j = 0; j <= height; j += height / numCells){
-      if (fillColor === 255){
+  for (let i = 0; i <= width; i += width / numCells) {
+    for (let j = 0; j <= height; j += height / numCells) {
+      if (fillColor === 255) {
         fillColor = 200;
       } else {
         fillColor = 255;
