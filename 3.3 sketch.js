@@ -11,7 +11,7 @@ function setup() {
 }
 
 function draw() {
-
+  
   if (mouseIsPressed) {
     backgroundColor -= 5;
     background(backgroundColor);
