@@ -25,8 +25,8 @@ function draw() {
       curveVertex(array[i][0], array[i][1])
 
       noStroke();
-      stroke((5 * frameCount) % 360, 40, 100);
-      fill((5 * frameCount) % 360, 100, 100);
+      stroke((4 * frameCount) % 360, 40, 100);
+      fill((4 * frameCount) % 360, 100, 100);
 
       strokeWeight(20);
       line(mouseX, mouseY, pmouseX, pmouseY);
